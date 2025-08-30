@@ -40,7 +40,7 @@ interface CategoryFilterProps {
 export function CategoryFilter({ selectedCategory, onCategoryChange }: CategoryFilterProps) {
   return (
     <div>
-      <h4 className="font-medium text-gray-900 mb-4">Categories</h4>
+      <h4 className="font-medium text-foreground mb-4">Categories</h4>
       <div className="space-y-2">
         {categories.map((category, index) => (
           <motion.div
@@ -55,8 +55,8 @@ export function CategoryFilter({ selectedCategory, onCategoryChange }: CategoryF
               onClick={() => onCategoryChange(category)}
               className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 ${
                 selectedCategory === category
-                  ? "bg-blue-50 border border-blue-200 text-blue-700"
-                  : "hover:bg-gray-50 text-gray-700 border border-transparent"
+                  ? "bg-primary/10 border border-primary/30 text-primary"
+                  : "hover:bg-accent text-muted-foreground border border-transparent"
               }`}
             >
               <span className="text-lg">{categoryIcons[category]}</span>
@@ -71,7 +71,7 @@ export function CategoryFilter({ selectedCategory, onCategoryChange }: CategoryF
                 >
                   <Badge 
                     variant="secondary"
-                    className="bg-blue-100 text-blue-700 text-xs"
+                    className="bg-primary/20 text-primary text-xs"
                   >
                     ✓
                   </Badge>

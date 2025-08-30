@@ -9,16 +9,16 @@ import Link from "next/link";
 import { Template, TemplateCategory } from "@src/types/template";
 
 const categoryColors: Record<TemplateCategory, string> = {
-  Technology: "bg-blue-500",
-  Gaming: "bg-purple-500",
-  Agriculture: "bg-green-500",
-  Cooking: "bg-orange-500",
-  Travel: "bg-cyan-500",
-  Finance: "bg-emerald-500",
-  Education: "bg-indigo-500",
-  Vlogs: "bg-pink-500",
-  Business: "bg-slate-500",
-  Health: "bg-teal-500"
+  Technology: "bg-primary",
+  Gaming: "bg-primary",
+  Agriculture: "bg-primary",
+  Cooking: "bg-primary",
+  Travel: "bg-primary",
+  Finance: "bg-primary",
+  Education: "bg-primary",
+  Vlogs: "bg-primary",
+  Business: "bg-primary",
+  Health: "bg-primary"
 };
 
 interface TemplateCardProps {
@@ -32,7 +32,7 @@ export function TemplateCard({ template }: TemplateCardProps) {
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className="group cursor-pointer"
     >
-      <Card className="overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white">
+      <Card className="overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-card">
         <div className="relative">
           {/* Template Preview */}
           <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
@@ -42,7 +42,7 @@ export function TemplateCard({ template }: TemplateCardProps) {
               style={{ backgroundColor: template.canvas.backgroundColor || '#f3f4f6' }}
             >
               {/* Render basic shapes based on template layers */}
-              {template.layers.map((layer, index) => {
+              {template.layers.map((layer) => {
                 if (layer.type === 'text' && layer.text) {
                   return (
                     <div
@@ -93,7 +93,7 @@ export function TemplateCard({ template }: TemplateCardProps) {
               <div className="text-center">
                 <Button
                   size="sm"
-                  className="bg-white text-black hover:bg-gray-100 mb-2"
+                  className="bg-background text-foreground hover:bg-accent mb-2"
                 >
                   Use Template
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -117,7 +117,7 @@ export function TemplateCard({ template }: TemplateCardProps) {
           {/* Recommended Badge */}
           {template.meta.recommended && (
             <div className="absolute top-3 right-3">
-              <Badge className="bg-yellow-500 text-white border-0 text-xs">
+              <Badge className="bg-primary text-white border-0 text-xs">
                 <Sparkles className="w-3 h-3 mr-1" />
                 Popular
               </Badge>
@@ -138,14 +138,14 @@ export function TemplateCard({ template }: TemplateCardProps) {
         
         <CardContent className="p-6">
           <div className="flex items-start justify-between mb-3">
-            <h3 className="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-1">
+            <h3 className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors line-clamp-1">
               {template.name}
             </h3>
-            <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all flex-shrink-0 ml-2" />
+            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0 ml-2" />
           </div>
           
           {template.description && (
-            <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+            <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
               {template.description}
             </p>
           )}
@@ -155,7 +155,7 @@ export function TemplateCard({ template }: TemplateCardProps) {
               <Badge 
                 key={tag}
                 variant="outline"
-                className="text-xs text-gray-500 border-gray-200"
+                className="text-xs text-muted-foreground border-border"
               >
                 {tag}
               </Badge>
@@ -163,14 +163,14 @@ export function TemplateCard({ template }: TemplateCardProps) {
             {template.meta.tags.length > 3 && (
               <Badge 
                 variant="outline"
-                className="text-xs text-gray-500 border-gray-200"
+                className="text-xs text-muted-foreground border-border"
               >
                 +{template.meta.tags.length - 3}
               </Badge>
             )}
           </div>
 
-          <div className="flex items-center justify-between text-xs text-gray-500">
+          <div className="flex items-center justify-between text-xs text-muted-foreground">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-1">
                 <Eye className="w-3 h-3" />
@@ -186,10 +186,10 @@ export function TemplateCard({ template }: TemplateCardProps) {
             </div>
           </div>
 
-          <div className="mt-4 pt-4 border-t border-gray-100">
+          <div className="mt-4 pt-4 border-t border-border">
             <Button 
               asChild
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+              className="w-full royal-gradient hover:opacity-90 text-white"
             >
               <Link href={`/editor/${template.id}`}>
                 Customize Template

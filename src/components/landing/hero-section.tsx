@@ -7,11 +7,11 @@ import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-900 via-slate-900 to-amber-900 dark:from-emerald-950 dark:via-slate-950 dark:to-amber-950 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-20 left-20 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"
+          className="absolute top-20 left-20 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -24,7 +24,7 @@ export function HeroSection() {
           }}
         />
         <motion.div
-          className="absolute top-60 right-32 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
+          className="absolute top-60 right-32 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl"
           animate={{
             x: [0, -80, 0],
             y: [0, 60, 0],
@@ -37,7 +37,7 @@ export function HeroSection() {
           }}
         />
         <motion.div
-          className="absolute bottom-32 left-1/2 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl"
+          className="absolute bottom-32 left-1/2 w-80 h-80 bg-emerald-400/20 rounded-full blur-3xl"
           animate={{
             x: [0, 50, 0],
             y: [0, -30, 0],
@@ -78,7 +78,7 @@ export function HeroSection() {
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight"
           >
             Create{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+            <span className="royal-gradient-text">
               Stunning
             </span>
             <br />
@@ -126,7 +126,7 @@ export function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 text-lg px-8 py-6 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 group"
+              className="royal-gradient hover:opacity-90 text-white border-0 text-lg px-8 py-6 rounded-xl shadow-2xl hover:shadow-emerald-500/25 transition-all duration-300 group"
             >
               <Link href="/templates">
                 Start Creating Free
@@ -168,8 +168,8 @@ export function HeroSection() {
                 transition={{ delay: 1.3 + index * 0.1, duration: 0.5 }}
                 className="text-center"
               >
-                <stat.icon className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-                <div className="text-2xl md:text-3xl font-bold text-white">
+                <stat.icon className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
+                <div className="text-2xl md:text-3xl font-bold royal-gradient-text">
                   {stat.number}
                 </div>
                 <div className="text-gray-400 text-sm">{stat.label}</div>

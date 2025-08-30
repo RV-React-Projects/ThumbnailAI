@@ -1,5 +1,6 @@
 import { Navbar } from "@components/landing/navbar";
 import { HeroSection } from "@components/landing/hero-section";
+import { AIGenerationSection } from "@components/ai/ai-generation-section";
 import { FeaturesSection } from "@components/landing/features-section";
 import { TemplatePreview } from "@components/landing/template-preview";
 
@@ -8,6 +9,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
+      <AIGenerationSection />
       <FeaturesSection />
       <TemplatePreview />
     </div>

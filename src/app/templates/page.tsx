@@ -25,11 +25,11 @@ export default function TemplatesPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Navbar />
       
       {/* Header */}
-      <div className="pt-24 pb-12 bg-gradient-to-b from-white to-gray-50">
+      <div className="pt-24 pb-12 bg-gradient-to-b from-background to-secondary/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -37,13 +37,13 @@ export default function TemplatesPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Professional YouTube
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="royal-gradient-text">
                 {" "}Thumbnail Templates
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Choose from our collection of high-converting thumbnail templates 
               designed by professionals for maximum engagement.
             </p>
@@ -61,7 +61,7 @@ export default function TemplatesPage() {
                 placeholder="Search templates..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 pr-4 py-3 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                className="pl-10 pr-4 py-3 text-lg border-border focus:border-primary focus:ring-primary"
               />
             </motion.div>
           </motion.div>
@@ -77,10 +77,10 @@ export default function TemplatesPage() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="lg:w-64 flex-shrink-0"
           >
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 sticky top-24">
+            <div className="bg-card rounded-xl p-6 shadow-sm border border-border sticky top-24">
               <div className="flex items-center gap-2 mb-6">
-                <SlidersHorizontal className="w-5 h-5 text-gray-600" />
-                <h3 className="font-semibold text-gray-900">Filters</h3>
+                <SlidersHorizontal className="w-5 h-5 text-muted-foreground" />
+                <h3 className="font-semibold text-foreground">Filters</h3>
               </div>
               
               <CategoryFilter
@@ -88,9 +88,9 @@ export default function TemplatesPage() {
                 onCategoryChange={setSelectedCategory}
               />
               
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <h4 className="font-medium text-gray-900 mb-3">Quick Stats</h4>
-                <div className="space-y-2 text-sm text-gray-600">
+              <div className="mt-6 pt-6 border-t border-border">
+                <h4 className="font-medium text-foreground mb-3">Quick Stats</h4>
+                <div className="space-y-2 text-sm text-muted-foreground">
                   <div className="flex justify-between">
                     <span>Total Templates</span>
                     <span className="font-medium">{templates.length}</span>
@@ -118,10 +118,10 @@ export default function TemplatesPage() {
               className="flex items-center justify-between mb-8"
             >
               <div>
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <h2 className="text-2xl font-semibold text-foreground">
                   {selectedCategory === "All" ? "All Templates" : `${selectedCategory} Templates`}
                 </h2>
-                <p className="text-gray-600 mt-1">
+                <p className="text-muted-foreground mt-1">
                   {filteredTemplates.length} template{filteredTemplates.length !== 1 ? 's' : ''} found
                   {searchQuery && ` for "${searchQuery}"`}
                 </p>
@@ -163,10 +163,10 @@ export default function TemplatesPage() {
                 className="text-center py-16"
               >
                 <div className="text-gray-400 text-6xl mb-4">🔍</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-xl font-semibold text-foreground mb-2">
                   No templates found
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-muted-foreground mb-6">
                   Try adjusting your filters or search query to find more templates.
                 </p>
                 <Button 

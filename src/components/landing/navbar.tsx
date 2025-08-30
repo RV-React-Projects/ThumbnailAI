@@ -5,6 +5,7 @@ import { Button } from "@components/ui/button";
 import { Zap, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { ThemeToggle } from "@components/theme/theme-toggle";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ export function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -24,10 +25,10 @@ export function Navbar() {
             className="flex items-center gap-2"
           >
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 royal-gradient rounded-lg flex items-center justify-center">
                 <Zap className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-xl font-bold royal-gradient-text">
                 ThumbnailAI
               </span>
             </Link>
@@ -37,25 +38,25 @@ export function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link 
               href="/templates" 
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="text-foreground hover:text-primary transition-colors font-medium"
             >
               Templates
             </Link>
             <Link 
               href="/editor" 
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="text-foreground hover:text-primary transition-colors font-medium"
             >
               Editor
             </Link>
             <Link 
               href="/pricing" 
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="text-foreground hover:text-primary transition-colors font-medium"
             >
               Pricing
             </Link>
             <Link 
               href="/examples" 
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="text-foreground hover:text-primary transition-colors font-medium"
             >
               Examples
             </Link>
@@ -63,23 +64,25 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" className="text-gray-700 hover:text-blue-600">
+            <ThemeToggle />
+            <Button variant="ghost" className="text-foreground hover:text-primary">
               Sign In
             </Button>
             <Button 
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0"
+              className="royal-gradient hover:opacity-90 text-white border-0"
             >
               Get Started Free
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700"
+              className="text-foreground"
             >
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
@@ -96,40 +99,40 @@ export function Navbar() {
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="md:hidden overflow-hidden"
         >
-          <div className="py-4 space-y-4 border-t border-gray-200/50">
+          <div className="py-4 space-y-4 border-t border-border">
             <Link 
               href="/templates" 
-              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="block text-foreground hover:text-primary transition-colors font-medium"
               onClick={() => setIsOpen(false)}
             >
               Templates
             </Link>
             <Link 
               href="/editor" 
-              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="block text-foreground hover:text-primary transition-colors font-medium"
               onClick={() => setIsOpen(false)}
             >
               Editor
             </Link>
             <Link 
               href="/pricing" 
-              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="block text-foreground hover:text-primary transition-colors font-medium"
               onClick={() => setIsOpen(false)}
             >
               Pricing
             </Link>
             <Link 
               href="/examples" 
-              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="block text-foreground hover:text-primary transition-colors font-medium"
               onClick={() => setIsOpen(false)}
             >
               Examples
             </Link>
-            <div className="pt-4 space-y-2 border-t border-gray-200/50">
-              <Button variant="ghost" className="w-full justify-start text-gray-700">
+            <div className="pt-4 space-y-2 border-t border-border">
+              <Button variant="ghost" className="w-full justify-start text-foreground">
                 Sign In
               </Button>
-              <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+              <Button className="w-full royal-gradient text-white">
                 Get Started Free
               </Button>
             </div>
