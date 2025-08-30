@@ -1,0 +1,396 @@
+[
+  {
+    "id": "tech_bold_split",
+    "name": "Tech Bold Split",
+    "category": "Technology",
+    "preview": "/templates/tech_bold_split.jpg",
+    "description": "Perfect for tech tutorials and programming content",
+    "canvas": {
+      "width": 1280,
+      "height": 720,
+      "backgroundColor": "#0f172a"
+    },
+    "layers": [
+      {
+        "id": "bg_overlay",
+        "type": "rect",
+        "x": 640,
+        "y": 0,
+        "width": 640,
+        "height": 720,
+        "fill": "rgba(0,0,0,0.6)"
+      },
+      {
+        "id": "main_title",
+        "type": "text",
+        "text": "MAIN TITLE",
+        "x": 680,
+        "y": 150,
+        "fontFamily": "Inter",
+        "fontSize": 72,
+        "fontStyle": "bold",
+        "fill": "#ffffff",
+        "stroke": "#000000",
+        "strokeWidth": 4,
+        "textAlign": "left",
+        "lineHeight": 1.1
+      },
+      {
+        "id": "subtitle",
+        "type": "text",
+        "text": "Subtitle or keyword",
+        "x": 680,
+        "y": 320,
+        "fontFamily": "Inter",
+        "fontSize": 32,
+        "fill": "#3b82f6",
+        "textAlign": "left"
+      },
+      {
+        "id": "face_placeholder",
+        "type": "rect",
+        "x": 40,
+        "y": 80,
+        "width": 520,
+        "height": 560,
+        "fill": "#374151",
+        "cornerRadius": 20,
+        "stroke": "#3b82f6",
+        "strokeWidth": 4
+      }
+    ],
+    "meta": {
+      "tags": ["neon", "split", "modern", "tech"],
+      "recommended": true,
+      "difficulty": "easy",
+      "createdAt": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "id": "gaming_action",
+    "name": "Gaming Action Hero",
+    "category": "Gaming",
+    "preview": "/templates/gaming_action.jpg",
+    "description": "High-energy design for gaming content",
+    "canvas": {
+      "width": 1280,
+      "height": 720,
+      "backgroundColor": "#1a0b2e"
+    },
+    "layers": [
+      {
+        "id": "title_bg",
+        "type": "rect",
+        "x": 0,
+        "y": 500,
+        "width": 1280,
+        "height": 220,
+        "fill": "rgba(239, 68, 68, 0.9)"
+      },
+      {
+        "id": "game_title",
+        "type": "text",
+        "text": "EPIC GAMING",
+        "x": 640,
+        "y": 560,
+        "fontFamily": "Inter",
+        "fontSize": 84,
+        "fontStyle": "bold",
+        "fill": "#ffffff",
+        "stroke": "#000000",
+        "strokeWidth": 6,
+        "textAlign": "center",
+        "shadow": {
+          "color": "#000000",
+          "blur": 10,
+          "offsetX": 4,
+          "offsetY": 4
+        }
+      },
+      {
+        "id": "character_area",
+        "type": "circle",
+        "x": 200,
+        "y": 150,
+        "width": 400,
+        "height": 400,
+        "fill": "#7c3aed",
+        "opacity": 0.7
+      }
+    ],
+    "meta": {
+      "tags": ["action", "gaming", "colorful", "character"],
+      "recommended": true,
+      "difficulty": "medium",
+      "createdAt": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "id": "agriculture_organic",
+    "name": "Organic Farm Fresh",
+    "category": "Agriculture",
+    "preview": "/templates/agriculture_organic.jpg",
+    "description": "Natural and earthy design for farming content",
+    "canvas": {
+      "width": 1280,
+      "height": 720,
+      "backgroundColor": "#16a34a"
+    },
+    "layers": [
+      {
+        "id": "bg_overlay",
+        "type": "rect",
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720,
+        "fill": "rgba(255, 255, 255, 0.1)"
+      },
+      {
+        "id": "farm_title",
+        "type": "text",
+        "text": "FRESH HARVEST",
+        "x": 640,
+        "y": 200,
+        "fontFamily": "Inter",
+        "fontSize": 68,
+        "fontStyle": "bold",
+        "fill": "#ffffff",
+        "stroke": "#15803d",
+        "strokeWidth": 4,
+        "textAlign": "center"
+      },
+      {
+        "id": "subtitle",
+        "type": "text",
+        "text": "Organic & Natural",
+        "x": 640,
+        "y": 320,
+        "fontFamily": "Inter",
+        "fontSize": 36,
+        "fill": "#fef3c7",
+        "textAlign": "center"
+      },
+      {
+        "id": "product_area",
+        "type": "rect",
+        "x": 440,
+        "y": 400,
+        "width": 400,
+        "height": 280,
+        "fill": "#fbbf24",
+        "cornerRadius": 25,
+        "opacity": 0.8
+      }
+    ],
+    "meta": {
+      "tags": ["organic", "natural", "green", "fresh"],
+      "recommended": false,
+      "difficulty": "easy",
+      "createdAt": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "id": "cooking_recipe",
+    "name": "Delicious Recipe",
+    "category": "Cooking",
+    "preview": "/templates/cooking_recipe.jpg",
+    "description": "Warm and appetizing design for cooking videos",
+    "canvas": {
+      "width": 1280,
+      "height": 720,
+      "backgroundColor": "#7c2d12"
+    },
+    "layers": [
+      {
+        "id": "recipe_bg",
+        "type": "rect",
+        "x": 0,
+        "y": 480,
+        "width": 1280,
+        "height": 240,
+        "fill": "rgba(254, 215, 170, 0.95)"
+      },
+      {
+        "id": "recipe_title",
+        "type": "text",
+        "text": "AMAZING RECIPE",
+        "x": 80,
+        "y": 540,
+        "fontFamily": "Inter",
+        "fontSize": 54,
+        "fontStyle": "bold",
+        "fill": "#7c2d12",
+        "textAlign": "left"
+      },
+      {
+        "id": "cook_time",
+        "type": "text",
+        "text": "Ready in 30 mins",
+        "x": 80,
+        "y": 630,
+        "fontFamily": "Inter",
+        "fontSize": 28,
+        "fill": "#a3a3a3",
+        "textAlign": "left"
+      },
+      {
+        "id": "food_area",
+        "type": "circle",
+        "x": 800,
+        "y": 100,
+        "width": 400,
+        "height": 400,
+        "fill": "#fef3c7",
+        "stroke": "#f59e0b",
+        "strokeWidth": 6
+      }
+    ],
+    "meta": {
+      "tags": ["cooking", "recipe", "warm", "appetizing"],
+      "recommended": true,
+      "difficulty": "easy",
+      "createdAt": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "id": "travel_adventure",
+    "name": "Travel Adventure",
+    "category": "Travel",
+    "preview": "/templates/travel_adventure.jpg",
+    "description": "Inspiring design for travel and adventure content",
+    "canvas": {
+      "width": 1280,
+      "height": 720,
+      "backgroundColor": "#0ea5e9"
+    },
+    "layers": [
+      {
+        "id": "gradient_overlay",
+        "type": "rect",
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 720,
+        "fill": "linear-gradient(135deg, rgba(14, 165, 233, 0.8) 0%, rgba(168, 85, 247, 0.8) 100%)"
+      },
+      {
+        "id": "destination",
+        "type": "text",
+        "text": "EXPLORE",
+        "x": 640,
+        "y": 150,
+        "fontFamily": "Inter",
+        "fontSize": 96,
+        "fontStyle": "bold",
+        "fill": "#ffffff",
+        "stroke": "#1e293b",
+        "strokeWidth": 5,
+        "textAlign": "center",
+        "shadow": {
+          "color": "#000000",
+          "blur": 15,
+          "offsetX": 3,
+          "offsetY": 3
+        }
+      },
+      {
+        "id": "location",
+        "type": "text",
+        "text": "Beautiful Destination",
+        "x": 640,
+        "y": 300,
+        "fontFamily": "Inter",
+        "fontSize": 42,
+        "fill": "#fef3c7",
+        "textAlign": "center"
+      },
+      {
+        "id": "photo_frame",
+        "type": "rect",
+        "x": 440,
+        "y": 400,
+        "width": 400,
+        "height": 280,
+        "fill": "#ffffff",
+        "cornerRadius": 15,
+        "stroke": "#e5e7eb",
+        "strokeWidth": 8
+      }
+    ],
+    "meta": {
+      "tags": ["travel", "adventure", "inspiring", "scenic"],
+      "recommended": true,
+      "difficulty": "medium",
+      "createdAt": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "id": "finance_growth",
+    "name": "Financial Growth",
+    "category": "Finance",
+    "preview": "/templates/finance_growth.jpg",
+    "description": "Professional design for finance and investment content",
+    "canvas": {
+      "width": 1280,
+      "height": 720,
+      "backgroundColor": "#1e293b"
+    },
+    "layers": [
+      {
+        "id": "stats_bg",
+        "type": "rect",
+        "x": 60,
+        "y": 60,
+        "width": 1160,
+        "height": 600,
+        "fill": "#334155",
+        "cornerRadius": 20,
+        "stroke": "#10b981",
+        "strokeWidth": 3
+      },
+      {
+        "id": "finance_title",
+        "type": "text",
+        "text": "FINANCIAL GROWTH",
+        "x": 640,
+        "y": 180,
+        "fontFamily": "Inter",
+        "fontSize": 64,
+        "fontStyle": "bold",
+        "fill": "#10b981",
+        "textAlign": "center"
+      },
+      {
+        "id": "percentage",
+        "type": "text",
+        "text": "+127%",
+        "x": 640,
+        "y": 320,
+        "fontFamily": "Inter",
+        "fontSize": 120,
+        "fontStyle": "bold",
+        "fill": "#ffffff",
+        "textAlign": "center"
+      },
+      {
+        "id": "description",
+        "type": "text",
+        "text": "Investment Strategy",
+        "x": 640,
+        "y": 480,
+        "fontFamily": "Inter",
+        "fontSize": 36,
+        "fill": "#94a3b8",
+        "textAlign": "center"
+      }
+    ],
+    "meta": {
+      "tags": ["finance", "growth", "professional", "stats"],
+      "recommended": false,
+      "difficulty": "easy",
+      "createdAt": "2024-01-01T00:00:00Z"
+    }
+  }
+]
+
