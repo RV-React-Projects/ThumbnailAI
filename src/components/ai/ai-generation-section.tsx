@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@components/ui/card";
 import { Badge } from "@components/ui/badge";
 import { Sparkles, Wand2, Loader2, Image as ImageIcon, Download } from "lucide-react";
 import Image from "next/image";
-import { ThumbnailGenerationRequest, ThumbnailGenerationResponse, ThumbnailTheme } from "@src/types/template";
+import { ThumbnailGenerationRequest, ThumbnailGenerationResponse, ThumbnailTheme } from "@/types/template";
 
 const examplePrompts = [
   "Tech tutorial about JavaScript arrays",
@@ -31,8 +31,6 @@ const themes: { value: ThumbnailTheme; label: string }[] = [
   { value: 'sports', label: 'Sports' },
   { value: 'science', label: 'Science' },
 ];
-
-
 
 export function AIGenerationSection() {
   const [formData, setFormData] = useState<ThumbnailGenerationRequest>({
@@ -122,7 +120,7 @@ export function AIGenerationSection() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-secondary/30 to-background">
+    <section id="ai-generation-section" className="py-24 bg-gradient-to-b from-secondary/30 to-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

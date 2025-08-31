@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Badge } from "@components/ui/badge";
-import { TemplateCategory } from "@src/types/template";
+import { TemplateCategory } from "@/types/template";
 
 const categories: (TemplateCategory | "All")[] = [
   "All",

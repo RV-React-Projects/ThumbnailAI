@@ -3,9 +3,18 @@
 import { motion } from "framer-motion";
 import { Button } from "@components/ui/button";
 import { ArrowRight, Sparkles, Zap, Image as ImageIcon } from "lucide-react";
-import Link from "next/link";
 
 export function HeroSection() {
+  const scrollToAISection = () => {
+    const aiSection = document.getElementById('ai-generation-section');
+    if (aiSection) {
+      aiSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-900 via-slate-900 to-amber-900 dark:from-emerald-950 dark:via-slate-950 dark:to-amber-950 overflow-hidden">
       {/* Animated Background Elements */}
@@ -124,29 +133,27 @@ export function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
           >
             <Button
-              asChild
+              onClick={scrollToAISection}
               size="lg"
               className="royal-gradient hover:opacity-90 text-white border-0 text-lg px-8 py-6 rounded-xl shadow-2xl hover:shadow-emerald-500/25 transition-all duration-300 group"
             >
-              <Link href="/templates">
-                Start Creating Free
-                <motion.div
-                  className="ml-2"
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <ArrowRight className="w-5 h-5" />
-                </motion.div>
-              </Link>
+              Start Creating Free
+              <motion.div
+                className="ml-2"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <ArrowRight className="w-5 h-5" />
+              </motion.div>
             </Button>
             
-            <Button
+            {/* <Button
               variant="outline"
               size="lg"
               className="border-white/20 text-white hover:bg-white/10 text-lg px-8 py-6 rounded-xl backdrop-blur-sm"
             >
               View Templates
-            </Button>
+            </Button> */}
           </motion.div>
 
           {/* Stats */}

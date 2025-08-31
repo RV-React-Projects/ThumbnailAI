@@ -1,72 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { ThumbnailGenerationRequest } from '@/types/template';
 
-export interface ThumbnailRequest {
-  title: string;
-  description: string;
-  theme: string;
-}
-
-export interface ThumbnailResponse {
-  success: boolean;
-  image?: string; // base64 string
-  enhancedTitle?: string; // The corrected/enhanced title used
-  error?: string;
-}
-
-// Function to enhance and spell-check titles using AI
-async function enhanceTitle(originalTitle: string): Promise<string> {
-  const apiKey = process.env.AI_API_KEY;
-  if (!apiKey) return originalTitle;
-
-  try {
-    const enhancementPrompt = `Fix any spelling errors and slightly enhance this YouTube video title to make it more engaging while keeping the core meaning intact. Only return the enhanced title, nothing else:
-
-Original title: "${originalTitle}"
-
-Rules:
-- Fix any spelling mistakes
-- Keep it concise (under 60 characters if possible)
-- Make it more engaging and click-worthy
-- Preserve the main topic and intent
-- Use proper capitalization
-- Return ONLY the enhanced title, no quotes or extra text`;
-
-    const response = await fetch('https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        inputs: enhancementPrompt,
-        parameters: {
-          max_new_tokens: 20,
-          temperature: 0.3,
-          return_full_text: false
-        }
-      })
-    });
-
-    if (response.ok) {
-      const result = await response.json();
-      if (result && result[0] && result[0].generated_text) {
-        const enhancedTitle = result[0].generated_text.trim();
-        // Basic validation - if response is reasonable, use it
-        if (enhancedTitle.length > 5 && enhancedTitle.length < 100) {
-          return enhancedTitle;
-        }
-      }
-    }
-  } catch (error) {
-    console.log('Title enhancement failed, using original:', error);
-  }
-
-  // Fallback: Basic spell check and enhancement
-  return basicTitleEnhancement(originalTitle);
-}
-
-// Fallback function for basic title enhancement
-function basicTitleEnhancement(title: string): string {
+// Function to enhance and spell-check titles
+function enhanceTitle(title: string): string {
   // Basic spell corrections for common YouTube words
   const corrections: Record<string, string> = {
     'tecnology': 'Technology',
@@ -112,7 +48,7 @@ function basicTitleEnhancement(title: string): string {
 
 export async function POST(request: NextRequest) {
   try {
-    const { title, description, theme }: ThumbnailRequest = await request.json();
+    const { title, description, theme }: ThumbnailGenerationRequest = await request.json();
 
     // Validate required fields
     if (!title || !description || !theme) {
@@ -132,7 +68,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create enhanced and spell-corrected title
-    const enhancedTitle = await enhanceTitle(title);
+    const enhancedTitle = enhanceTitle(title);
     
     // Create a detailed prompt for thumbnail generation
     const prompt = `Create a professional YouTube thumbnail with these EXACT REQUIREMENTS:

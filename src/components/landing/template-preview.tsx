@@ -6,7 +6,7 @@ import { Badge } from "@components/ui/badge";
 import { Button } from "@components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
-import type { Template, TemplateCategory } from "@src/types/template";
+import type { Template, TemplateCategory } from "@/types/template";
 
 const previewTemplates: Pick<Template, 'id' | 'name' | 'category' | 'preview' | 'meta'>[] = [
   {

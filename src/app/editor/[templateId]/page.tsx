@@ -9,30 +9,30 @@ import { Badge } from "@components/ui/badge";
 import { Input } from "@components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@components/ui/select";
 import {
-  Download,
-  Layers,
-  Type,
-  Image as ImageIcon,
-  Palette,
-  Undo,
-  Redo,
-  Save,
-  Sparkles,
-  Bold,
-  Italic,
-  Underline,
-  Eye,
-  EyeOff,
-  Copy,
-  Trash2,
-  Plus,
-  Settings,
-  Square,
-  Circle as CircleIcon,
-  Star
+    Download,
+    Layers,
+    Type,
+    Image as ImageIcon,
+    Palette,
+    Undo,
+    Redo,
+    Save,
+    Sparkles,
+    Bold,
+    Italic,
+    Underline,
+    Eye,
+    EyeOff,
+    Copy,
+    Trash2,
+    Plus,
+    Settings,
+    Square,
+    Circle as CircleIcon,
+    Star
 } from "lucide-react";
-import { Template, TemplateLayer, TemplateCategory } from "@src/types/template";
-import templatesData from "@data/templates.json";
+import { Template, TemplateLayer, TemplateCategory } from "@/types/template";
+import templatesData from "@/data/templates.json";
 
 // Dynamically import Konva components to avoid SSR issues
 const Stage = dynamic(() => import("react-konva").then((mod) => ({ default: mod.Stage })), { ssr: false });

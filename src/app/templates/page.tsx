@@ -8,8 +8,8 @@ import { CategoryFilter } from "@components/templates/category-filter";
 import { Button } from "@components/ui/button";
 import { Search, SlidersHorizontal } from "lucide-react";
 import { Input } from "@components/ui/input";
-import type { Template, TemplateCategory } from "@src/types/template";
-import templatesData from "@data/templates.json";
+import type { Template, TemplateCategory } from "@/types/template";
+import templatesData from "@/data/templates.json";
 
 const templates: Template[] = templatesData as Template[];
 

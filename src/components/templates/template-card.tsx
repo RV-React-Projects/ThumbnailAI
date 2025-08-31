@@ -6,7 +6,7 @@ import { Badge } from "@components/ui/badge";
 import { Button } from "@components/ui/button";
 import { ArrowRight, Sparkles, Clock, Eye, Download } from "lucide-react";
 import Link from "next/link";
-import { Template, TemplateCategory } from "@src/types/template";
+import { Template, TemplateCategory } from "@/types/template";
 
 const categoryColors: Record<TemplateCategory, string> = {
   Technology: "bg-primary",
