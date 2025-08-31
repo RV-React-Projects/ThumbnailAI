@@ -6,6 +6,7 @@ import { Input } from '@components/ui/input';
 import { Card } from '@components/ui/card';
 import { ThumbnailGenerationRequest, ThumbnailGenerationResponse, ThumbnailTheme } from '@src/types/template';
 import { Loader2, Download, ImageIcon } from 'lucide-react';
+import Image from 'next/image';
 
 const themes: { value: ThumbnailTheme; label: string }[] = [
   { value: 'technology', label: 'Technology' },
@@ -173,7 +174,7 @@ export default function ThumbnailGenerator() {
               </div>
             ) : generatedImage ? (
               <>
-                <img
+                <Image
                   src={generatedImage}
                   alt="Generated thumbnail"
                   className="w-full h-full object-cover rounded-lg"
