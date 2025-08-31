@@ -1,18 +1,19 @@
 export interface TemplateLayer {
   id: string;
-  type: 'text' | 'image' | 'rect' | 'circle';
+  type: 'text' | 'image' | 'rect' | 'circle' | 'star';
   x: number;
   y: number;
   width?: number;
   height?: number;
   rotation?: number;
   opacity?: number;
+  visible?: boolean;
   
   // Text specific properties
   text?: string;
   fontFamily?: string;
   fontSize?: number;
-  fontStyle?: 'normal' | 'bold' | 'italic';
+  fontStyle?: string;
   fill?: string;
   stroke?: string;
   strokeWidth?: number;
@@ -23,8 +24,9 @@ export interface TemplateLayer {
   src?: string;
   fit?: 'cover' | 'contain' | 'fill';
   
-  // Shape specific properties (rect, circle)
+  // Shape specific properties (rect, circle, star)
   cornerRadius?: number;
+  points?: number;
   
   // Effects
   shadow?: {
@@ -96,4 +98,32 @@ export interface Project {
   createdAt: string;
   updatedAt: string;
 }
+
+// AI Thumbnail Generation Types
+export interface ThumbnailGenerationRequest {
+  title: string;
+  description: string;
+  theme: string;
+}
+
+export interface ThumbnailGenerationResponse {
+  success: boolean;
+  image?: string; // base64 string
+  error?: string;
+}
+
+export type ThumbnailTheme = 
+  | 'technology'
+  | 'gaming' 
+  | 'agriculture'
+  | 'cooking'
+  | 'travel'
+  | 'finance'
+  | 'education'
+  | 'vlogs'
+  | 'business'
+  | 'health'
+  | 'entertainment'
+  | 'sports'
+  | 'science';
 
