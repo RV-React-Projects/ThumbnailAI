@@ -109,6 +109,7 @@ export interface ThumbnailGenerationRequest {
 export interface ThumbnailGenerationResponse {
   success: boolean;
   image?: string; // base64 string
+  enhancedTitle?: string; // The corrected/enhanced title used
   error?: string;
 }
 

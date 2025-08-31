@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Button } from '@components/ui/button';
 import { Input } from '@components/ui/input';
 import { Card } from '@components/ui/card';
 import { ThumbnailGenerationRequest, ThumbnailGenerationResponse, ThumbnailTheme } from '@src/types/template';
 import { Loader2, Download, ImageIcon } from 'lucide-react';
-import Image from 'next/image';
 
 const themes: { value: ThumbnailTheme; label: string }[] = [
   { value: 'technology', label: 'Technology' },
@@ -31,6 +31,7 @@ export default function ThumbnailGenerator() {
     theme: 'technology',
   });
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
+  const [enhancedTitle, setEnhancedTitle] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -43,6 +44,7 @@ export default function ThumbnailGenerator() {
     setIsLoading(true);
     setError(null);
     setGeneratedImage(null);
+    setEnhancedTitle(null);
 
     try {
       const response = await fetch('/api/generate-thumbnail', {
@@ -57,6 +59,7 @@ export default function ThumbnailGenerator() {
 
       if (data.success && data.image) {
         setGeneratedImage(data.image);
+        setEnhancedTitle(data.enhancedTitle || formData.title);
       } else {
         setError(data.error || 'Failed to generate thumbnail');
       }
@@ -177,7 +180,9 @@ export default function ThumbnailGenerator() {
                 <Image
                   src={generatedImage}
                   alt="Generated thumbnail"
-                  className="w-full h-full object-cover rounded-lg"
+                  fill
+                  className="object-cover rounded-lg"
+                  unoptimized
                 />
                 <Button
                   onClick={handleDownload}
@@ -202,14 +207,27 @@ export default function ThumbnailGenerator() {
           </div>
 
           {generatedImage && (
-            <div className="mt-4 text-center">
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                Thumbnail generated successfully!
-              </p>
-              <Button onClick={handleDownload} variant="outline" className="w-full">
-                <Download className="w-4 h-4 mr-2" />
-                Download High Quality Image
-              </Button>
+            <div className="mt-4 space-y-3">
+              {enhancedTitle && enhancedTitle !== formData.title && (
+                <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <p className="text-xs font-medium text-blue-700 dark:text-blue-300 mb-1">
+                    Enhanced Title Used:
+                  </p>
+                  <p className="text-sm text-blue-900 dark:text-blue-100 font-medium">
+                    &ldquo;{enhancedTitle}&rdquo;
+                  </p>
+                </div>
+              )}
+              
+              <div className="text-center">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                  Thumbnail generated successfully!
+                </p>
+                <Button onClick={handleDownload} variant="outline" className="w-full">
+                  <Download className="w-4 h-4 mr-2" />
+                  Download High Quality Image
+                </Button>
+              </div>
             </div>
           )}
         </Card>
